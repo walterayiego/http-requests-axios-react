@@ -14,36 +14,24 @@ export const api = axios.create({
 const FirstRequest = () => {
   const fetchData = async () => {
     try {
-      // const res = await api.get("/");
-      const { data } = await api.get("/users");
-      console.log(data, "data");
+      const resp = await axios.get(url, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      // const { data } = await api.get("/users");
+      // console.log(data);
+
+      console.log(resp.data, "data");
     } catch (error) {
       console.log(error);
       // alert(error.message);
     }
   };
 
-  const fetchDataFetch = async () => {
-    try {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => console.log(data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    console.log("first axios request");
-  }, []);
-
   return (
-    <div>
-      <h2>first request</h2>
-      <button onClick={fetchData}>fetch data</button>
-      <br></br>
-      <br></br>
-      <button onClick={fetchDataFetch}>fetch data fetch</button>
+    <div className="m-3">
+      <button onClick={fetchData}>Fetch Data</button>
     </div>
   );
 };

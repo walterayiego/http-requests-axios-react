@@ -1,6 +1,6 @@
-import * as React from "react";
 import Title from "./components/Title.tsx";
-import Setup from "./examples/2-headers.tsx";
+import FirstGet from "./examples/1-first-request.tsx"
+import SetHeaders from "./examples/2-headers.tsx";
 import "./App.css";
 
 function App() {
@@ -9,7 +9,8 @@ function App() {
     <>
       <main>
         <Title />
-        <Setup />
+        <FirstGet />
+        <SetHeaders />
       </main>
     </>
   );
